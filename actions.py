@@ -8,7 +8,7 @@ from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet
 
 
-API_KEY = '460bddcc77a24c31990ed30e14a1d648'
+API_KEY = ''
 
 class ActionSearchRecipesByIngredients(Action):
 
