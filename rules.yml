@@ -1,0 +1,41 @@
+version: "3.1"
+
+#rules:
+
+rules:
+- rule: Greeting Rule
+  steps:
+  - intent: greet
+  - action: utter_greet
+  
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_bye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_bot_challenge
+
+- rule: say the apologize response when user apologize
+  steps:
+  - intent: apologize
+  - action: utter_apologize_response
+
+  #- rule: Respond to goodbye with help inquiry
+    #steps:
+      #- intent: goodbye
+      #- action: utter_bye
+
+#- rule: Affirmation after help inquiry
+    #steps:
+      #- intent: affirm
+      #- action: utter_happy_response
+
+  #- rule: General inquiry after affirmation
+    #steps:
+      #- intent: affirm
+      #- action: utter_ask_continue_help
+

@@ -1,0 +1,200 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_unhappy
+  - thank
+  - apologize
+  - search_recipes_by_ingredients
+  - recipe_information
+  - get_random_recipes
+  - analyze_recipe_nutrition
+  - get_dish_pairing_for_wine
+  - generate_meal_plans
+  - out_of_scope
+  - ask_bot_purpose
+  - bot_challenge
+  - ask_valid_diet
+  - not_satisfied
+  - affirm_request_recipes_by_ingredients
+  - affirm_request_recipe_information
+  - affirm_request_get_random_recipes
+  - affirm_request_analyze_recipe_nutrition
+  - affirm_request_dish_pair_for_wine
+  - affirm_request_meal_plans
+
+entities:
+  - ingredients 
+  - recipe_id 
+  - wine_type 
+  - recipe_name 
+  - time_frame 
+  - number 
+  - diet 
+  - exclude 
+  - target_calories 
+  - include_tags 
+  - exclude_tags 
+
+slots:
+  diet:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: diet
+  time_frame:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: time_frame
+  recipe_id:
+    type: float
+    #influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: recipe_id
+  number:
+    type: float
+    #influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: number
+  recipe_name:
+    type: text
+    #influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: recipe_name
+  wine_type:
+    type: text
+    #influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: wine_type
+  include_tags:
+    type: list
+    #influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: include_tags
+  exclude_tags:
+    type: list
+    #influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: exclude_tags
+  ingredients:
+    type: list
+    #influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: ingredients
+  exclude:
+    type: list
+    #influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: exclude
+  target_calories:
+    type: float
+    mappings:
+     - type: from_entity
+       entity: target_calories
+
+responses:
+  utter_greet:
+    - text: "Hey there! How can I help you today?"
+    - text: "Hello! How can I assist you today?"
+    - text: "Hi! How can I be of service today?"
+    - text: "Howdy! Is there anything I can help you with?"
+    - text: "Hey pal, how may i help you today"
+
+  utter_thanks_response:
+    - text: "You are most welcome! Is there anything else that I can help you with?"
+    - text: "You're welcome! Do you need help with anything else?"
+    - text: "My pleasure! Is there anything else I can assist you with?"
+
+  utter_apologize_response:
+    - text: no problem, what can i help you with?
+    - text: is there anything else i can help with you?
+    - text: do you have a valid request to make leveraging spoonacular api?
+
+  utter_ask_continue_help:
+    - text: "Great, what else can I assist you with?"
+    - text: "Sure, what other help do you need?"
+    - text: "Alright, what else would you like to do?"
+
+  utter_bye:
+    - text: "Goodbye, hope I was of help today."
+    - text: "Take care! I hope I was helpful."
+    - text: "Farewell, hope I could assist you well."
+    - text: "Goodbye, was I helpful today?"
+    - text: "Bye friend, would appreciate if you let me know if i was helpful"
+
+  utter_apology:
+    - text: "Sorry, hope to serve you better next time."
+    - text: "I apologize, I hope to assist you better in the future."
+    - text: "My apologies, I aim to serve you better next time."
+    - text: "Sorry about that, I'll try to do better next time."
+   
+  utter_bot_challenge:
+    - text: "I am a bot, here to assist you."
+    - text: "I'm a virtual assistant, ready to help."
+    - text: "I'm an AI bot, here to provide assistance."
+    - text: "I'm a chatbot designed to help you."
+    - text: "I'm an automated assistant here to assist you."
+
+  utter_out_of_scope:
+    - text: "I'm not sure how to help with that. Is there something else I can assist you with?"
+    - text: "I don't have the information you're looking for. How else can i assist you?"
+    - text: "I'm unable to assist with that request. what else can i do for you?"
+    - text: "That's outside my current capabilities. Can I help you with something else?"
+    - text: "I can't help with that, unfortunately. Please let me know if there's anything else I can assist you with."
+
+  utter_happy_response:
+    - text: "I'm glad to hear i was of help"
+    - text: "I am happy to know i helped you, friend"
+    - text: "Thank you for the feedback, i'm glad to know i was of help"
+  
+  utter_bot_purpose:
+    - text: "I'm here to assist you with various culinary tasks using the Spoonacular API! I can find recipes based on ingredients, provide detailed recipe information, suggest random recipes, analyze recipe nutrition, recommend wine pairings for dishes, and generate meal plans."
+    - text: "With the Spoonacular API, I can help you discover recipes by ingredients, provide recipe information, suggest random recipes for inspiration, analyze recipe nutrition, recommend wine pairings, and generate meal plans tailored to your preferences."
+    - text: "Using the Spoonacular API, I offer a range of culinary assistance, including finding recipes by ingredients, providing recipe details, suggesting random recipes, analyzing nutrition, recommending wine pairings, and generating meal plans."
+    - text: "My capabilities with the Spoonacular API include searching for recipes by ingredients, retrieving recipe information, suggesting random recipes, analyzing nutrition data, recommending wine pairings, and generating personalized meal plans."
+    - text: "I leverage the power of the Spoonacular API to assist you with recipe searches, recipe details, random recipe suggestions, nutrition analysis, wine pairings, and meal planning. Let me know how I can assist you with your culinary needs!"
+
+  utter_mood_unhappy:
+    - text: "I'm sorry to hear you are sad, cheer up!, what can i do for you today?"
+    - text: "oh, i am sorry you are unhappy friend, everything will get better, how can i help you today?"
+    - text: "I am sorry to hear about you don't feel so good, is there anything i can help with?"
+  
+  utter_valid_diet:
+     - text: "The list of available diets are gluten free, ketogenic, vegetarian, lacto-vegetarian, ovo-vegetarian, vegan, pescetarian, paleo, primal, low FODMAP, whole30"
+     - text: "They are: gluten free, ketogenic, vegetarian, lacto-vegetarian, ovo-vegetarian, vegan, pescetarian, paleo, primal, low FODMAP, whole30"
+     - text: "The diets available are gluten free, ketogenic, vegetarian, lacto-vegetarian, ovo-vegetarian, vegan, pescetarian, paleo, primal, low FODMAP, whole30"
+
+actions:
+  - utter_greet
+  - utter_thanks_response
+  - utter_ask_continue_help
+  - utter_bye
+  - utter_apology
+  - utter_bot_challenge
+  - utter_out_of_scope
+  - utter_apologize_response
+  - utter_happy_response
+  - utter_bot_purpose
+  - utter_mood_unhappy
+  - utter_valid_diet
+  - action_search_recipes_by_ingredients
+  - action_recipe_information
+  - action_get_random_recipes
+  - action_analyze_recipe_nutrition
+  - action_get_dish_pairing_for_wine
+  - action_generate_meal_plans
+

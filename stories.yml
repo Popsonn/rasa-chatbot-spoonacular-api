@@ -1,0 +1,916 @@
+version: "3.1"
+
+stories:
+  - story: bot challenge, out of scope then denies further help
+    steps:
+    - intent: bot_challenge
+    - action: utter_bot_challenge
+    - intent: out_of_scope
+    - action: utter_out_of_scope
+    - intent: ask_bot_purpose
+    - action: utter_bot_purpose
+    - intent: thank
+    - action: utter_thanks_response
+    - intent: deny
+    - action: utter_bye
+
+  - story: bot challenge, out of scope, then apologises and denies further help
+    steps:
+    - intent: bot_challenge
+    - action: utter_bot_challenge
+    - intent: out_of_scope
+    - action: utter_out_of_scope
+    - intent: apologize
+    - action: utter_apologize_response
+    - intent: ask_bot_purpose
+    - action: utter_bot_purpose
+    - intent: thank
+    - action: utter_thanks_response
+    - intent: deny
+    - action: utter_bye
+
+  - story: bot challenge, out of scope, then apologises and requests
+    steps:
+    - intent: bot_challenge
+    - action: utter_bot_challenge
+    - intent: out_of_scope
+    - action: utter_out_of_scope
+    - intent: apologize
+    - action: utter_apologize_response
+    - intent: affirm_request_recipe_information
+    - action: action_recipe_information
+    - intent: thank
+    - action: utter_thanks_response
+    - intent: deny
+    - action: utter_bye
+
+  - story: bot challenge, out of scope then user makes requests
+    steps: 
+    - intent: bot_challenge
+    - action: utter_bot_challenge
+    - intent: out_of_scope
+    - action: utter_out_of_scope
+    - intent: ask_bot_purpose
+    - action: utter_bot_purpose
+    - intent: thank
+    - action: utter_thanks_response
+    - intent: affirm
+    - action: utter_ask_continue_help
+    - intent: generate_meal_plans
+      entities: 
+      - diet: "vegetarian"
+      - time_frame: 3
+      - exclude: "shellfish"
+      - target_calories: 1800
+    - action: action_generate_meal_plans
+    - intent: thank
+    - action: utter_thanks_response
+    - intent: deny
+    - action: utter_bye
+
+  - story: out of scope and apology
+    steps:
+    - intent: out_of_scope
+    - action: utter_out_of_scope
+    - intent: apologize
+    - action: utter_apologize_response
+    - intent: deny
+    - action: utter_bye
+
+  - story: out of scope and apology
+    steps:
+    - intent: out_of_scope
+    - action: utter_out_of_scope
+    - intent: affirm
+    - action: utter_ask_continue_help
+    - intent: get_random_recipes
+      entities:
+      - include_tags: "dairy"
+      - exclude_tags: "egg"
+    - action: action_get_random_recipes
+    - intent: thank
+    - action: utter_thanks_response
+
+  - story: user asks to search recipes by ingredients, thanks bot and denies further help
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: search_recipes_by_ingredients
+      entities:
+      - ingredients: 
+        - "chicken" 
+        - "rice"
+        - "beans"
+      - number: 2
+    - action: action_search_recipes_by_ingredients
+    - intent: thank
+    - action: utter_thanks_response
+    - intent: affirm
+    - action: utter_ask_continue_help
+    - intent: deny
+    - action: utter_bye
+
+  - story: user requests to get a random recipe and denies further help
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: get_random_recipes
+    - action: action_get_random_recipes
+    - intent: thank
+    - action: utter_thanks_response
+    - intent: affirm
+    - action: utter_ask_continue_help
+    - intent: deny
+    - action: utter_bye
+
+  - story: get a random recipe, user says bye and commends bot
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: get_random_recipes
+    - action: action_get_random_recipes
+    - intent: goodbye
+    - action: utter_bye
+    - intent: affirm
+    - action: utter_happy_response
+
+  - story: get a random recipe, user says bye and not satisfied with bot
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: get_random_recipes
+    - action: action_get_random_recipes
+    - intent: goodbye
+    - action: utter_bye
+    - intent: deny
+    - action: utter_apology
+
+  - story: user asks bot to generate a meal plan, and analyze nutrition, thanks bot and denies further help
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: generate_meal_plans
+      entities:
+      - diet: "keto"
+      - time_frame: 7
+    - action: action_generate_meal_plans
+    - intent: affirm
+    - action: utter_ask_continue_help
+    - intent: analyze_recipe_nutrition
+      entities:
+      - recipe_id: 54321
+    - action: action_analyze_recipe_nutrition
+    - intent: thank
+    - action: utter_thanks_response
+    - intent: affirm
+    - action: utter_ask_continue_help
+    - intent: deny
+    - action: utter_bye
+
+  - story: user requests dish pairing for wine and follow-up with meal plan
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: get_dish_pairing_for_wine
+      entities:
+      - wine_type: "prosecco"
+    - action: action_get_dish_pairing_for_wine
+    - intent: affirm
+    - action: utter_ask_continue_help
+    - intent: generate_meal_plans
+      entities:
+      - diet: "vegetarian"
+      - time_frame: "day"
+    - action: action_generate_meal_plans
+    - intent: thank
+    - action: utter_thanks_response
+    - intent: affirm
+    - action: utter_ask_continue_help
+    - intent: deny
+    - action: utter_bye
+
+  - story: unhappy mood and suggest random recipe
+    steps:
+    - intent: mood_unhappy
+    - action: utter_mood_unhappy
+    - intent: get_random_recipes
+    - action: action_get_random_recipes
+    - intent: thank
+    - action: utter_thanks_response
+    - intent: affirm
+    - action: utter_ask_continue_help
+    - intent: deny
+    - action: utter_bye
+    - intent: deny
+    - action: utter_apology
+
+  - story: User inputs invalid diet but gets a reply from bot and asks for recipe information
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: generate_meal_plans
+      entities:
+      - diet: "balanced"
+      - time_frame: "week"
+    - action: action_generate_meal_plans
+    - intent: thank
+    - action: utter_thanks_response
+    - intent: recipe_information
+      entities:
+      - recipe_name: "Chicken Alfredo"
+    - action: action_recipe_information
+    - intent: affirm
+    - action: utter_ask_continue_help
+    - intent: thank
+    - action: utter_thanks_response
+
+  - story: User inputs invalid diet but gets a reply from bot and then asks for list of valid diets, and asks bot again
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: generate_meal_plans
+      entities:
+      - diet: "balanced"
+      - time_frame: "week"
+    - action: action_generate_meal_plans
+    - intent: ask_valid_diet
+    - action: utter_valid_diet
+    - intent: affirm_request_meal_plans
+      entities:
+      - diet: "whole30"
+    - action: action_generate_meal_plans
+    - intent: thank
+    - action: utter_thanks_response
+    - intent: deny
+    - action: utter_bye
+
+  - story: User inquires about bot's purpose, expresses gratitude, and denies further assistance
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: ask_bot_purpose
+    - action: utter_bot_purpose
+    - intent: thank
+    - action: utter_thanks_response
+    - intent: deny
+    - action: utter_bye
+
+  - story: User asks for dish pairing for wine, expresses gratitude, and requests random recipe
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: get_dish_pairing_for_wine
+      entities:
+      - wine_type: "pinot_noir"
+    - action: action_get_dish_pairing_for_wine
+    - intent: thank
+    - action: utter_thanks_response
+    - intent: get_random_recipes
+    - action: action_get_random_recipes
+    - intent: affirm
+    - action: utter_ask_continue_help
+
+  - story: User asks bot to analyze recipe nutrition and then denies further interaction
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: analyze_recipe_nutrition
+      entities:
+      - recipe_id: 98765
+    - action: action_analyze_recipe_nutrition
+    - intent: not_satisfied
+    - action: utter_apology
+
+  - story: User expresses unhappy mood, asks for meal plan, and thanks the bot
+    steps:
+    - intent: mood_unhappy
+    - action: utter_mood_unhappy
+    - intent: generate_meal_plans
+      entities:
+      - diet: "balanced"
+      - time_frame: 7
+    - action: action_generate_meal_plans
+    - intent: thank
+    - action: utter_thanks_response
+
+  - story: User expresses unhappy mood, asks for meal plan, and not satisfied with the bot
+    steps:
+    - intent: mood_unhappy
+    - action: utter_mood_unhappy
+    - intent: generate_meal_plans
+      entities:
+      - diet: "balanced"
+      - time_frame: 7
+    - action: action_generate_meal_plans
+    - intent: thank
+    - action: utter_thanks_response
+    - intent: deny
+    - action: utter_bye
+
+  - story: User greets, asks for a random recipe, and expresses happiness
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: get_random_recipes
+    - action: action_get_random_recipes
+    - intent: affirm
+    - action: utter_ask_continue_help
+
+  - story: User requests for invalid diet plan
+    steps: 
+    - intent: generate_meal_plans
+      entities: 
+      - diet: "unknown-diet"
+      - time_frame: 3
+    - action: action_generate_meal_plans
+    - intent: ask_valid_diet
+    - action: utter_valid_diet
+    - intent: generate_meal_plans
+      entities:
+      - diet: "vegetarian"
+      - time_frame: 3
+    - action: action_generate_meal_plans
+    - intent: thank
+    - action: utter_thanks_response
+    - intent: deny
+    - action: utter_bye
+ 
+  - story: User expresses dissatisfaction and requests different service
+    steps:
+    - intent: mood_unhappy
+    - action: utter_mood_unhappy
+    - intent: generate_meal_plans
+      entities:
+      - diet: "vegan"
+    - action: action_generate_meal_plans
+    - intent: not_satisfied
+    - action: utter_apology
+    - intent: get_random_recipes
+    - action: action_get_random_recipes
+    - intent: thank
+    - action: utter_thanks_response
+    - intent: deny
+    - action: utter_bye
+ 
+  - story: User feedback on meal plan
+    steps:
+    - intent: generate_meal_plans
+      entities:
+      - diet: "ketogenic"
+      - time_frame: 7
+    - action: action_generate_meal_plans
+    - intent: thank
+    - action: utter_thanks_response
+    - intent: affirm
+    - action: utter_happy_response
+    - intent: deny
+    - action: utter_bye
+
+  - story: Get recipe information, user denies satisfaction, bot apologizes
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: recipe_information
+      entities:
+      - recipe_name: "Lasagna"
+    - action: action_recipe_information
+    - intent: goodbye
+    - action: utter_bye
+    - intent: deny
+    - action: utter_apology
+
+  - story: User requests for multiple random recipes
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: get_random_recipes
+    - action: action_get_random_recipes
+    - intent: affirm
+    - action: utter_ask_continue_help
+    - intent: get_random_recipes
+    - action: action_get_random_recipes
+    - intent: thank
+    - action: utter_thanks_response
+    - intent: deny
+    - action: utter_bye
+
+  - story: User changes mind about ingredients used in recipe search
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: search_recipes_by_ingredients
+      entities:
+      - ingredients:
+        - "chicken"
+        - "rice"
+    - action: action_search_recipes_by_ingredients
+    - intent: not_satisfied
+    - action: utter_apology
+    - intent: affirm_request_recipes_by_ingredients
+      entities:
+      - ingredients:
+        - "potatoes"
+        - "salmon"
+        - "sour cream"
+    - action: action_search_recipes_by_ingredients
+    - intent: affirm
+    - action: utter_ask_continue_help
+    - intent: get_random_recipes
+      entities: 
+      - include_tags:
+        - "indian"
+        - "gluten free"
+      - number: 5
+    - action: action_get_random_recipes
+    - intent: thank
+    - action: utter_thanks_response
+    - intent: deny
+    - action: utter_bye
+
+  - story: User requests an invalid diet plan and responds with apology
+    steps:
+    - intent: generate_meal_plans
+      entities:
+      - diet: "ovo-vegetarian"
+      - time_frame: 15
+    - action: action_generate_meal_plans
+    - intent: thank
+    - action: utter_thanks_response
+    - intent: affirm_request_dish_pair_for_wine
+      entities:
+      - wine_type: "cesanese"
+    - action: action_get_dish_pairing_for_wine
+    - intent: thank
+    - action: utter_thanks_response
+    - intent: deny
+    - action: utter_bye
+
+  - story: User requests all what bot can do 
+    steps:
+    - intent: recipe_information
+      entities:
+      - recipe_id: 123456
+    - action: action_recipe_information
+    - intent: affirm_request_analyze_recipe_nutrition
+      entities: 
+      - recipe_id: 123456
+    - action: action_analyze_recipe_nutrition
+    - intent: affirm_request_meal_plans
+      entities:
+      - exclude: "gluten"
+    - action: action_generate_meal_plans
+    - intent: thank
+    - action: utter_thanks_response
+    - intent: deny
+    - action: utter_bye
+
+  - story: User requests multiple times, then gives an invalid diet
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: search_recipes_by_ingredients
+      entities:
+      - ingredients: 
+        - "beef"
+        - "tomato"
+      - number: 10
+    - action: action_search_recipes_by_ingredients
+    - intent: affirm_request_get_random_recipes
+      entities:
+      - include_tags: 
+        - "italian"
+        - "snack"
+      - exclude_tags: "eggs"
+    - action: action_get_random_recipes
+    - intent: affirm_request_meal_plans
+      entities: 
+      - diet: "ewa"
+    - action: action_generate_meal_plans
+    - intent: ask_valid_diet
+    - action: utter_valid_diet
+    - intent: goodbye
+    - action: utter_bye
+    - intent: affirm
+    - action: utter_happy_response
+
+  - story: User asks for recipe information and then a meal plan
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: recipe_information
+      entities:
+      - recipe_name: "Chicken Alfredo"
+    - action: action_recipe_information
+    - intent: affirm
+    - action: utter_ask_continue_help
+    - intent: generate_meal_plans
+    - action: action_generate_meal_plans
+    - intent: thank
+    - action: utter_thanks_response
+    - intent: deny
+    - action: utter_bye
+    - intent: affirm
+    - action: utter_happy_response
+
+  - story: User requests wine pairing, unsatisfied twice
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: get_dish_pairing_for_wine
+      entities:
+      - wine_type: "merlot"
+    - action: action_get_dish_pairing_for_wine
+    - intent: not_satisfied
+    - action: utter_apology
+    - intent: affirm_request_dish_pair_for_wine
+      entities:
+      - wine_type: "fruit_wine"
+    - action: action_get_dish_pairing_for_wine
+    - intent: not_satisfied
+    - action: utter_apology
+  
+  - story: User asks for nutrition analysis of a recipe
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: analyze_recipe_nutrition
+      entities:
+      - recipe_id: "98765"
+    - action: action_analyze_recipe_nutrition
+    - intent: affirm
+    - action: utter_ask_continue_help
+    - intent: get_random_recipes
+    - action: action_get_random_recipes
+    - intent: thank
+    - action: utter_thanks_response
+    - intent: deny
+    - action: utter_bye
+
+  - story: User expresses unhappy mood and asks for a meal plan
+    steps:
+    - intent: mood_unhappy
+    - action: utter_mood_unhappy
+    - intent: generate_meal_plans
+      entities:
+      - diet: "keto"
+      - time_frame: "one"
+      - target_calories: 1000
+      - exclude: "tree nuts"
+    - action: action_generate_meal_plans
+    - intent: affirm_request_get_random_recipes
+      entities:
+      - exclude_tags: "tree nuts"
+      - include_tags: "keto"
+      - number: "three"
+    - action: action_get_random_recipes
+    - intent: affirm_request_dish_pair_for_wine
+      entities:
+      - wine_type: "chardonnay"
+    - action: action_get_dish_pairing_for_wine
+    - intent: affirm
+    - action: utter_ask_continue_help
+    - intent: deny
+    - action: utter_bye
+
+  - story: User asks for dish pairing for wine and follows up with nutrition analysis
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: get_dish_pairing_for_wine
+      entities:
+      - wine_type: "pinot_noir"
+    - action: action_get_dish_pairing_for_wine
+    - intent: affirm
+    - action: utter_ask_continue_help
+    - intent: analyze_recipe_nutrition
+      entities:
+      - recipe_id: 54321
+    - action: action_analyze_recipe_nutrition
+    - intent: thank
+    - action: utter_thanks_response
+    - intent: deny
+    - action: utter_bye
+    - intent: deny
+    - action: utter_apology
+
+  - story: User requests invalid diet plan, then corrects and requests wine pairing
+    steps:
+    - intent: generate_meal_plans
+      entities:
+      - diet: "paleo"
+      - time_frame: "seven"
+    - action: action_generate_meal_plans
+    - intent: affirm
+    - action: utter_ask_continue_help
+    - intent: generate_meal_plans
+      entities:
+      - diet: "gluten free"
+      - time_frame: "two"
+    - action: action_generate_meal_plans
+    - intent: affirm
+    - action: utter_ask_continue_help
+    - intent: get_dish_pairing_for_wine
+      entities:
+      - wine_type: "cabernet_sauvignon"
+    - action: action_get_dish_pairing_for_wine
+    - intent: thank
+    - action: utter_thanks_response
+    - intent: deny
+    - action: utter_bye
+
+  - story: User asks for a meal plan, then random recipe, then nutrition analysis
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: generate_meal_plans
+      entities:
+      - diet: "whole30"
+      - time_frame: "four"
+    - action: action_generate_meal_plans
+    - intent: affirm
+    - action: utter_ask_continue_help
+    - intent: get_random_recipes
+    - action: action_get_random_recipes
+    - intent: affirm
+    - action: utter_ask_continue_help
+    - intent: analyze_recipe_nutrition
+      entities:
+      - recipe_id: "12345"
+    - action: action_analyze_recipe_nutrition
+    - intent: thank
+    - action: utter_thanks_response
+    - intent: deny
+    - action: utter_bye
+    - intent: affirm
+    - action: utter_happy_response
+
+  - story: User requests recipe information and follows up with invalid meal plan request
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: recipe_information
+      entities:
+      - recipe_name: "Spaghetti Bolognese"
+    - action: action_recipe_information
+    - intent: affirm
+    - action: utter_ask_continue_help
+    - intent: generate_meal_plans
+      entities:
+      - diet: "invalid-diet"
+      - time_frame: "week"
+    - action: action_generate_meal_plans
+    - intent: thank
+    - action: utter_thanks_response
+    - intent: generate_meal_plans
+      entities:
+      - diet: "lacto-vegetarian"
+      - exclude: "soy"
+    - action: action_generate_meal_plans
+    - intent: thank
+    - action: utter_thanks_response
+    - intent: deny
+    - action: utter_bye
+    - intent: deny
+    - action: utter_apology
+
+  - story: User affirms request and then asks for recipe information and meal plan
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: recipe_information
+      entities:
+      - recipe_name: "Pasta Primavera"
+    - action: action_recipe_information
+    - intent: thank
+    - action: utter_thanks_response
+    - intent: affirm_request_meal_plans
+      entities:
+      - diet: "ketogenic"
+      - time_frame: 1
+    - action: action_generate_meal_plans
+    - intent: thank
+    - action: utter_thanks_response
+    - intent: deny
+    - action: utter_bye
+   
+  - story: User is unhappy with bot's response and bot apologizes
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: search_recipes_by_ingredients
+      entities:
+      - ingredients: 
+        - "fish"
+        - "broccoli"
+    - action: action_search_recipes_by_ingredients
+    - intent: not_satisfied
+    - action: utter_apology
+
+  - story: User requests meal plan, bot provides, user thanks, but denies further help
+    steps:
+    - intent: generate_meal_plans
+      entities:
+      - diet: "paleo"
+      - time_frame: 16
+    - action: action_generate_meal_plans
+    - intent: thank
+    - action: utter_thanks_response
+    - intent: deny
+    - action: utter_bye
+    - intent: affirm
+    - action: utter_happy_response
+
+  - story: User requests nutrition analysis and expresses happiness
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: analyze_recipe_nutrition
+      entities:
+      - recipe_id: 67890
+    - action: action_analyze_recipe_nutrition
+    - intent: thank
+    - action: utter_thanks_response
+    - intent: deny
+    - action: utter_bye
+
+  - story: User greets, requests random recipe, then affirms and requests meal plan
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: get_random_recipes
+    - action: action_get_random_recipes
+    - intent: thank
+    - action: utter_thanks_response
+    - intent: affirm_request_meal_plans
+      entities:
+      - include_tags: 
+        - "appetizer"
+        - "korean"
+      - number: "six"
+    - action: action_generate_meal_plans
+    - intent: thank
+    - action: utter_thanks_response
+    - intent: deny
+    - action: utter_bye
+
+  - story: User greets, requests meal plan, then affirms and requests dish pairing
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: generate_meal_plans
+      entities:
+      - diet: "primal"
+      - time_frame: "week"
+    - action: action_generate_meal_plans
+    - intent: affirm_request_dish_pair_for_wine
+      entities:
+      - wine_type: "late_harvest"
+    - action: action_get_dish_pairing_for_wine
+    - intent: thank
+    - action: utter_thanks_response
+    - intent: deny
+    - action: utter_bye
+
+  - story: User requests recipe information, then affirms and requests nutrition analysis
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: recipe_information
+      entities:
+      - recipe_name: "Spaghetti Carbonara"
+    - action: action_recipe_information
+    - intent: affirm_request_analyze_recipe_nutrition
+      entities:
+      - recipe_id: 54321
+    - action: action_analyze_recipe_nutrition
+    - intent: thank
+    - action: utter_thanks_response
+    - intent: deny
+    - action: utter_bye
+
+  - story: User affirms and requests recipe search with ingredients
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: affirm_request_recipes_by_ingredients
+      entities:
+      - number: "five"
+      - ingredients: 
+        - "potatoes"
+        - "cheese"
+    - action: action_search_recipes_by_ingredients
+    - intent: affirm
+    - action: utter_ask_continue_help
+    - intent: get_random_recipes
+      entities: 
+      - number: "seven"
+    - action: action_get_random_recipes
+    - intent: thank
+    - action: utter_thanks_response
+    - intent: deny
+    - action: utter_bye
+
+  - story: User affirms and requests a meal plan, then thanks the bot
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: affirm_request_meal_plans
+      entities:
+      - exclude: "nuts"
+      - time_frame: "day"
+    - action: action_generate_meal_plans
+    - intent: thank
+    - action: utter_thanks_response
+    - intent: deny
+    - action: utter_bye
+
+  - story: User affirms and requests recipe information of recipe
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: affirm_request_analyze_recipe_nutrition
+      entities:
+      - recipe_name: "Pasta Primavera"
+    - action: action_analyze_recipe_nutrition
+    - intent: affirm
+    - action: utter_ask_continue_help
+    - intent: get_random_recipes
+    - action: action_get_random_recipes
+    - intent: thank
+    - action: utter_thanks_response
+    - intent: deny
+    - action: utter_bye
+
+  - story: User affirms and requests recipe information of recipe
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: affirm_request_recipe_information
+      entities:
+      - recipe_id: 67890
+    - action: action_recipe_information
+    - intent: affirm_request_meal_plans
+      entities:
+      - diet: "gluten-free"
+      - exclude: "peanuts"
+    - action: action_generate_meal_plans
+    - intent: thank
+    - action: utter_thanks_response
+    - intent: deny
+    - action: utter_bye
+
+  - story: User requests for recipe search, then affirms and requests random recipe
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: search_recipes_by_ingredients
+      entities:
+      - ingredients: 
+        - "tofu"
+        - "eggs"
+    - action: action_search_recipes_by_ingredients
+    - intent: affirm_request_get_random_recipes
+      entities:
+      - exclude_tags: "tree-nuts"
+      - include_tags: "nut"
+    - action: action_get_random_recipes
+    - intent: thank
+    - action: utter_thanks_response
+    - intent: deny
+    - action: utter_bye
+    - intent: deny
+    - action: utter_apology
+
+  - story: User requests wine pairing and then affirms, requests recipe information and pleased
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: get_dish_pairing_for_wine
+      entities:
+      - wine_type: "cream_sherry"
+    - action: action_get_dish_pairing_for_wine
+    - intent: affirm_request_recipe_information
+      entities:
+      - recipe_id: "98765"
+    - action: action_recipe_information
+    - intent: goodbye
+    - action: utter_bye
+    - intent: affirm
+    - action: utter_happy_response
+
+  - story: User requests invalid wine for pairing and then affirms and requests another wine
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: get_dish_pairing_for_wine
+      entities:
+      - wine_type: "merlo"
+    - action: action_get_dish_pairing_for_wine
+    - intent: affirm_request_dish_pair_for_wine
+      entities:
+      - wine_type: "merlot"
+    - action: action_get_dish_pairing_for_wine
+    - intent: goodbye
+    - action: utter_bye
+    - intent: deny
+    - action: utter_apology

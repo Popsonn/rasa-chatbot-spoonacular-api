@@ -1,0 +1,1017 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - howdy
+    - hey there 
+    - let's go
+    - hey dude
+    - goodmorning
+    - good morning
+    - good evening
+    - hey, how are you doing today
+    - hey
+    - goodafternoon
+    - hey are you there
+    - hey bot
+    - hi bot are you there
+    - hii
+    - hellooo
+    - hey how are you
+    - hey i hope you are doing good
+    - hi bot
+    - hey dude
+    - hello bot
+    - hi wassup
+    - hi whatsup
+    - hey wassup
+    - hi bot
+    - hi again
+    - hi there
+    - hi pal
+    - greetings
+    - hello robot
+    - hallo
+    - heyyyyy
+    - hi hi
+    - hey hey 
+    - yo
+    - hola
+    - holla
+    - hello friend
+    - hey, let's talk
+    - hey let's talk
+    - hey whatsup
+    - hello it is me again
+    - hey dude
+    - hi friend
+    - hi there it's me
+    - hi there
+    - heyo
+    - whats up
+    - whats up my bot
+    - wad up
+    - i hope you are doing great
+    - hey bot how are you
+    - hello how are you
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - good night
+    - goodbye
+    - have a nice day
+    - see you around
+    - see you later
+    - goodnight
+    - good bye
+    - see ya
+    - okay thank you bye
+    - thank you bye for now
+    - toodle
+    - bye bye
+    - gotta go
+    - farewell
+    - thank you, bye
+    - catch you later
+    - bye for now
+    - bye
+    - bye was nice talking to you
+    - bye bye bot
+    - bye nice talking to you
+    - bye see you soon
+    - bye talk to you later
+    - bye meet you soon
+    - bye thank you
+    - stop
+    - end
+    - catch you later
+    - catch ya later
+    - bye bot
+    - k bye
+    - bye see you
+    - bye take care
+    - bye take care see you soon
+    - ttyl
+    - talk to you later
+    - ciao
+    - Bye bye
+    - then bye
+    - bye!
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - why not
+    - correct
+    - yep
+    - okay, i love this!
+    - yeah
+    - yeah, this is it
+    - yes, this!
+    - that's right
+    - ok
+    - great
+    - right, thank you
+    - great choice
+    - sounds really good
+    - yes please
+    - ya
+    - yes thanks a lot
+    - yes it helped a lot...thanks
+    - yes it did,thanks a lot
+    - yup thanks
+    - yes thanks
+    - yes it did
+    - cool
+    - yep, will do thank you
+    - i'm sure i will!
+    - oh awesome!
+    - ok cool
+    - alright
+    - yes please
+    - nice
+    - yas
+    - perfect
+    - sure thing
+    - absolutely
+    - oh, ok
+    - sure
+    - hm, i'd like that
+    - sure!
+    - yes i accept
+    - sweet
+    - amazing!
+    - how nice!
+    - cool!
+    - yay
+    - i love this
+    - you did well
+    - woah, this is nice
+    - oh cool
+    - fine
+    - i will take that
+    - that sounds just right
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - not really
+    - nope
+    - definitely not
+    - never
+    - absolutely not
+    - i don't think so
+    - i'm afraid not
+    - no bot
+    - no maam
+    - no way
+    - no sorry
+    - No, not really.
+    - nah not for me
+    - nah
+    - no and no again
+    - no go
+    - no thanks
+    - no idea about it
+    - no, i'm good
+    - decline
+    - no, this will do
+    - actually nevermind
+    - deny
+    - i decline
+    - never mind
+    - nevermind
+    - no!!!!
+    - no i don't
+    - not really
+    - i don't want
+    - nah thanks
+    
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I am in a very bad mood today
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - bad 
+    - very bad
+    - awful
+    - terrible
+    - brutal
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+    
+- intent: not_satisfied
+  examples: |
+    - This doesn't help, I'm still unhappy
+    - I'm not satisfied with that
+    - That's not really what I wanted
+    - This doesn't make me feel any better
+    - I'm still feeling down after that
+    - worsened my mood
+    - your replies made me angrier
+    - i don't like this
+    - don't like that
+    - i don't think i like this
+    - this is not what i am looking for
+    - no, this isn't it
+    - hmm, this looks weird
+    - this is not what i was looking for
+    - no, you were not helpful
+    - no, you didn't fulfill my request
+    - no, you did not filfill my request
+    - your response wasn't what i was expecting
+    - i am not happy with these results
+    - i am not happy with this result
+    - no you did it wrong
+    - is this the best you can do
+    - another response please, hate this 
+    - i don't want either of those
+    - i was expecting something else 
+    - that was not my preferred response
+    - i didn't ask for this request
+    - i didn't ask to generate meal plan
+    - i didn't ask for recipe information
+    - i didn't ask for dish pairing for wine
+    - i didn't ask for nutrition analysis
+    - i didn't ask you to analyze nutrition
+    - i didn't ask you to search recipe by ingredients
+    - i didn't ask you for a random recipe
+    - this was not my request 
+
+- intent: thank
+  examples: |
+    - Thanks
+    - oh, okay thank you
+    - Thank you
+    - Thank you so much
+    - Thanks bot
+    - Thanks for that
+    - ok thanks!
+    - perfect thank you
+    - thanks a bunch for everything
+    - thanks for the help
+    - thanks a lot
+    - amazing, thanks
+    - cool, thanks
+    - cool thank you
+    - thanks
+    - thanks!
+    - thank you
+    - great thanks
+    - Thanks!
+    - cool thanks
+
+- intent: apologize
+  examples: |
+    - oh true, that was an invalid request
+    - sorry about that
+    - my apologies
+    - I apologize
+    - sorry
+    - I'm sorry
+    - I am sorry
+    - oops, my bad
+    - forgive me
+    - I apologize for that
+    - I'm so sorry
+    - you're right, that was a mistake
+    - my mistake, I apologize
+    - you're correct, sorry about that
+    - I see, my apologies
+    - indeed, that was incorrect
+    - sorry, my error
+    - I see now, sorry for the mistake
+    - that's my bad, sorry
+    - yes, sorry about that
+    - I apologize, that was wrong
+
+- intent: ask_bot_purpose
+  examples: |
+    - What do you do?
+    - How can you help me?
+    - What is your purpose?
+    - What assistance do you provide?
+    - Can you tell me about your capabilities?
+    - What kind of help do you offer?
+    - Okay, what do you do?
+
+- intent: search_recipes_by_ingredients
+  examples: |
+    - I have [chicken](ingredients), [rice](ingredients), and [tomatoes](ingredients)
+    - Show me recipes with [potatoes](ingredients) and [cheese](ingredients)
+    - I have [eggs, milk, and bread](ingredients). What recipes can I make with these ingredients?
+    - Can you suggest some recipes using [tomatoes, onions, and garlic](ingredients)?
+    - I want to cook something with [chicken, broccoli, and rice](ingredients). Any ideas?
+    - What can I make with [potatoes, carrots, and beef](ingredients)?
+    - Give me recipes that use [bananas, oats, and honey](ingredients).
+    - I want recipes with [chicken](ingredients)
+    - Can you find recipes with [pasta](ingredients) and [tomatoes](ingredients)
+    - Show me [4](number) recipes using [mushrooms](ingredients) and [spinach](ingredients)
+    - I need a recipe with [tofu](ingredients) and [soy sauce](ingredients)
+    - I want [four](number) recipes with [chicken](ingredients)
+    - I have [chicken](ingredients), [rice](ingredients), and [beans](ingredients)
+    - Suggest recipes with [fish](ingredients) and [lemon](ingredients)
+    - Show me [5](number) recipes with [chicken](ingredients)
+    - I want [3](number) recipes that use [beef](ingredients)
+    - Give me [ten](number) recipes with [pasta](ingredients)
+    - Show me [2](number) recipes using [broccoli](ingredients)
+    - What are [7](number) recipes with [shrimp](ingredients) and [garlic](ingredients)
+    - What are [seven](number) recipes with [shrimp](ingredients) and [garlic](ingredients)
+  
+- intent: recipe_information
+  examples: |
+    - Tell me about recipe with ID [12345](recipe_id)
+    - Give me details for recipe [67890](recipe_id)
+    - Can you provide details about the recipe [Spaghetti Carbonara](recipe_name)?
+    - I need more information on the recipe with ID [123456](recipe_id).
+    - Tell me more about [Chicken Tikka Masala](recipe_name).
+    - What are the ingredients and instructions for [Chocolate Chip Cookies](recipe_name)?
+    - Give me the details of the recipe called [Beef Stroganoff](recipe_name).
+    - Provide the recipe details using the id [54321](recipe_id)
+    - Look up the recipe info for [Margherita Pizza](recipe_name)
+    - [54321](recipe_id), can you show me details for that recipe?
+    - I need details about recipe number [67890](recipe_id) specifically.
+    - Look up the recipe for [Beef Stroganoff](recipe_name) please.
+    - [Margherita Pizza](recipe_name), can I get the recipe details?
+
+- intent: get_random_recipes
+  examples: |
+    - Suggest a random recipe
+    - Give me a random recipe
+    - Get me [five](number) random recipes
+    - Show [ten](number) random recipes
+    - Give me [2](number) random recipes with [vegetarian](include_tags) tag  
+    - Find [7](number) random [dairy](include_tags) recipes
+    - I want [3](number) random recipes that are [gluten free](include_tags)
+    - Show me [4](number) random [japanese](include_tags) recipes without [peanut](exclude_tags)
+    - Show me [4](number) random [vegan](include_tags) recipes without [nuts](exclude_tags)
+    - Get [six](number) random [dessert](include_tags) recipes excluding [seafood](exclude_tags)
+    - Find some random recipes, around [8](number), with [Mediterranean](include_tags) [vegetarian](include_tags) tags
+    - Give me a few, like [3](number), random [ketogenic](include_tags) recipes not containing [soy](exclude_tags)
+    - I need [two](number) random recipes that have [paleo](include_tags) and do not have [peanuts](exclude_tags)
+    - I'd like a random [vegan](include_tags) recipe.
+    - I had like a random [keto](include_tags) recipe
+    - Can you find a random [gluten free](include_tags) recipe?
+    - I want a random recipe with [salad](include_tags).
+    - Give me a random recipe excluding [nut](exclude_tags).
+    - Give me a random recipe with [sulfite](include_tags)
+    - Give me a random recipe with [gluten](include_tags)
+    - Give me a random recipe without [gluten](exclude_tags)
+    - Show me a random recipe without [dairy](exclude_tags).
+    - I'd like a random recipe that doesn't have [shellfish](exclude_tags).
+    - Find a random recipe without [sesame](exclude_tags).
+    - Can I get a random recipe excluding [peanuts](exclude_tags)?
+    - Show me [3](number) random [vegan](include_tags) recipes.
+    - I'd like [2](number) random recipes with [egg](include_tags).
+    - Find me [4](number) random recipes that is [gluten free](include_tags).
+    - Give me [2](number) random [snack](include_tags) recipes excluding [nuts](exclude_tags).
+    - I'd like a random recipe that doesn't have [shellfish](exclude_tags).
+    - Can I get a random recipe avoiding [grain](exclude_tags)?
+    - Show me a random recipe leaving out [soy](exclude_tags).
+    - I'd like a random recipe that omits [seafood](exclude_tags).
+    - Give me a random recipe that excludes [gluten](exclude_tags).
+    - Give me [2](number) random [dessert](include_tags) recipes avoiding [tree nut](exclude_tags).
+    - Can you find [5](number) random recipes that exclude [dairy](exclude_tags) and [wheat](exclude_tags)?
+    - Show me a random [Mexican](include_tags) recipe that is [vegan](include_tags)
+    - I want a [French](include_tags) recipe but avoid [shellfish](exclude_tags)
+    - Give me a [korean](include_tags) [snack](include_tags) recipe
+    - Show me a random [Japanese](include_tags) [snack](include_tags) that is without [egg](exclude_tags)
+    - Give me a [Korean](include_tags) recipe that excludes [sesame](exclude_tags)
+    - Can I get a random [Chinese](include_tags) recipe for a [main course](include_tags) that avoids [tree nuts](exclude_tags)
+    - Find a random [Asian](include_tags) [soup](include_tags) but avoid [dairy](exclude_tags)
+    - I want a random [American](include_tags) [snack](include_tags) that has [tree nuts](exclude_tags)
+    
+- intent: analyze_recipe_nutrition
+  examples: |
+    - Analyze nutrition for recipe [54321](recipe_id)
+    - What is the nutrition info for recipe [98765](recipe_id)
+    - Can you provide the nutrition information for recipe ID [640767](recipe_id)?
+    - What's the nutritional content of recipe [642585](recipe_id)?
+    - Give me the nutrition details for recipe ID [12345](recipe_id).
+    - I need the nutrition facts for the recipe ID [98765](recipe_id).
+    - Analyze the nutrition of recipe [564738](recipe_id) for me.
+    - What are the nutrition details of the recipe called [Crepes Suzette](recipe_name)?
+    - Can you analyze the nutrition for [Farfalle with fresh tomatoes, basil and mozzarella](recipe_name)?
+    - I'd like to know the nutrition information for [Cuban Black Beans & Rice](recipe_name).
+    - Tell me the nutritional content of [Vegetarian Tostadas](recipe_name).
+    - Give me the nutrition facts for [Instant Pot Quinoa Grain Bowl](recipe_name).
+    - What's the nutritional information for [Persimmons Pumpkin Orange Smoothie With Chia Seeds](recipe_name)?
+    - Analyze the nutrition of the recipe [Smoky Black Bean Soup With Sweet Potato & Kale](recipe_name).
+    - Provide the nutrition info for [Gluten Free Quinoa and Corn Flour Crepes](recipe_name).
+    - I need the nutritional analysis for [Blueberry, Chocolate & Cocao Superfood Pancakes](recipe_name).
+    - What is the nutrition information for [Noodles and Veggies With Peanut Sauce](recipe_name)?
+    - Can you give me the nutrition facts of [Vegetarian Falafels](recipe_name)?
+    - Tell me the nutritional breakdown of [Chicken Alfredo](recipe_name).
+    - I need the nutrition facts for [Beef Stroganoff](recipe_name).
+    - Can you analyze the recipe [Lasagna](recipe_name) for its nutrition content?
+    - How many calories are in [Tacos](recipe_name)?
+    - What is the protein content in [Quiche Lorraine](recipe_name)?
+    - How many carbs are in [Pancakes](recipe_name)?
+    - What's the fat content of [Cheesecake](recipe_name)?
+    - Give me the nutritional details of [Apple Pie](recipe_name).
+    - What are the nutrition facts for [Mushroom Risotto](recipe_name)?
+    - How many calories and carbs are in [Vegan Burger](recipe_name)?
+    - Can you provide the nutritional information for [Fish and Chips](recipe_name)?
+    - What's the nutrient breakdown of [Eggplant Parmesan](recipe_name)?
+    - How many grams of fat are in [Chili Con Carne](recipe_name)?
+    - Tell me the nutritional content of [Fried Rice](recipe_name).
+  
+- intent: get_dish_pairing_for_wine
+  examples: |
+    - What dishes go well with [red_burgundy](wine_type)?
+    - Suggest some dishes that pair with [merlot](wine_type).
+    - What can I eat with [pinot_noir](wine_type)?
+    - Give me some dish pairings for [sauvignon_blanc](wine_type).
+    - What are some good dishes to serve with [cabernet_sauvignon](wine_type)?
+    - I need dish pairings for [zinfandel](wine_type).
+    - Recommend dishes for [riesling](wine_type).
+    - What should I eat with [rosé](wine_type)?
+    - Can you suggest dishes that go with [shiraz](wine_type)?
+    - What food pairs well with [moscato](wine_type)?
+    - what food can i serve with [arneis](wine_type)
+    - i need suggestions on foods that go well with [soave](wine_type)
+    - what food can i eat with [lillet_blanc](wine_type)
+
+- intent: generate_meal_plans
+  examples: |
+    - Can you generate a meal plan for me?
+    - I need a meal plan.
+    - Create a meal plan.
+    - Plan my meals for the [week](time_frame).
+    - Can you give me a meal plan for the [day](time_frame)?
+    - Generate a meal plan for the next [week](time_frame).
+    - I need a meal plan for [today](time_frame).
+    - Create a meal plan for the entire [week](time_frame).
+    - Can you generate a [vegetarian](diet) meal plan for me?
+    - I need a [gluten-free](diet) meal plan.
+    - I need a [gluten free](diet) meal plan
+    - Create a [vegan](diet) meal plan.
+    - Plan my meals with a [ketogenic](diet) diet.
+    - Plan my meals with a [keto](diet) diet.
+    - Create a [keto](diet) meal plan for me and avoid [eggs](exclude) and [soy](exclude) in the meal plan
+    - Can you generate a meal plan with [2000](target_calories) calories?
+    - I need a meal plan for [1500](target_calories) calories a day.
+    - Create a meal plan with [1800](target_calories) calories.
+    - Plan my meals with a target of [2500](target_calories) calories.
+    - Can you generate a meal plan that excludes [dairy](exclude)?
+    - i need a meal plan. I'm allergic to [shellfish](exclude)
+    - I need a meal plan without [nuts](exclude).
+    - Give me a meal plan without [sulfite](exclude)
+    - I need a meal that doesn't contain [nut](exclude) and [shellfish](exclude)
+    - I  need a meal plan without [peanut](exclude)
+    - Create a meal plan without [egg](exclude), [tree nut](exclude) and [grain](exclude)
+    - Create a meal plan excluding [shellfish](exclude).
+    - Plan my meals without any [gluten](exclude).
+    - I need a [gluten free](diet) meal plan for the [day](time_frame) excluding [dairy](exclude)
+    - Can you generate a [vegetarian](diet) meal plan for the [week](time_frame) with [2000](target_calories) calories?
+    - I need a [gluten-free](diet) meal plan for the [day](time_frame) excluding [dairy](exclude).
+    - I need a [whole30](diet) meal plan for the [day](time_frame) excluding [seafood](exclude).
+    - Create a [vegan](diet) meal plan for the [week](time_frame) with [1800](target_calories) calories and no [peanuts](exclude).
+    - Plan my meals for [today](time_frame) with a [ketogenic](diet) diet and [2500](target_calories) calories.
+    - I'm looking for a meal plan without [sulfite](exclude)
+    - Can you help me plan my meals?
+    - I need some help with meal planning.
+    - Could you create a meal plan for me?
+    - Can you generate a meal plan for the [day](time_frame) with [1500](target_calories) calories for a [vegetarian](diet) diet?
+    - I need a meal plan for the [week](time_frame) excluding [gluten](exclude) and [nuts](exclude).
+    - Create a meal plan with [2000](target_calories) calories, [vegetarian](diet), and no [dairy](exclude).
+    - Plan my meals for [today](time_frame), [1800](target_calories) calories, [vegan](diet), and exclude [gluten](exclude).
+
+- intent: affirm_request_recipes_by_ingredients
+  examples: |
+    - Yes, I have [chicken](ingredients), [rice](ingredients), and [tomatoes](ingredients). Can you find me some recipes?
+    - Absolutely, show me recipes with [potatoes](ingredients) and [cheese](ingredients), please.
+    - Sure, I have [eggs, milk, and bread](ingredients). What recipes can I make with these ingredients?
+    - I'm fine, can you suggest some recipes using [tomatoes, onions, and garlic](ingredients)?
+    - Doing well, I want to cook something with [chicken, broccoli, and rice](ingredients). Any ideas?
+    - Yes please, what can I make with [potatoes, carrots, and beef](ingredients)?
+    - Of course, give me recipes that use [bananas, oats, and honey](ingredients).
+    - Absolutely, I want recipes with [chicken](ingredients).
+    - Sure thing, can you find recipes with [pasta](ingredients) and [tomatoes](ingredients)?
+    - Yes, show me [4](number) recipes using [mushrooms](ingredients) and [spinach](ingredients).
+    - Sure, I need a recipe with [tofu](ingredients) and [soy sauce](ingredients).
+    - I'm good, I want [four](number) recipes with [chicken](ingredients).
+    - No problem, I have [chicken](ingredients), [rice](ingredients), and [beans](ingredients). Can you help?
+    - That's fine, suggest recipes with [fish](ingredients) and [lemon](ingredients).
+    - Absolutely, show me [5](number) recipes with [chicken](ingredients).
+    - Sure, I want [3](number) recipes that use [beef](ingredients), please
+    - Yes please, give me [ten](number) recipes with [pasta](ingredients).
+    - I'm fine, show me [2](number) recipes using [broccoli](ingredients).
+    - Thanks, what are [7](number) recipes with [shrimp](ingredients) and [garlic](ingredients)?
+    - Sure thing, what are [seven](number) recipes with [shrimp](ingredients) and [garlic](ingredients)?
+    - No problem about that, can you show me recipes with [potatoes](ingredients) and [cheese](ingredients)?
+    - It's fine, I have [eggs, milk, and bread](ingredients). What recipes can I make with these ingredients?
+    - No worries, can you suggest some recipes using [tomatoes, onions, and garlic](ingredients)?
+    - That's alright, I want to cook something with [chicken, broccoli, and rice](ingredients). Any ideas?
+    - No problem, what can I make with [potatoes, carrots, and beef](ingredients)?
+    - It's fine, give me recipes that use [bananas, oats, and honey](ingredients).
+    - No worries, I want recipes with [chicken](ingredients).
+    - That's okay, can you find recipes with [pasta](ingredients) and [tomatoes](ingredients)?
+    - No problem, show me [4](number) recipes using [mushrooms](ingredients) and [spinach](ingredients).
+    - It's fine, I need a recipe with [tofu](ingredients) and [soy sauce](ingredients).
+    - No worries, I want [four](number) recipes with [chicken](ingredients).
+    - That's alright, I have [chicken](ingredients), [rice](ingredients), and [beans](ingredients). Can you help?
+    - No problem about that, suggest recipes with [fish](ingredients) and [lemon](ingredients).
+    - It's fine, show me [5](number) recipes with [chicken](ingredients).
+    - No worries, I want [3](number) recipes that use [beef](ingredients).
+    - That's okay, give me [ten](number) recipes with [pasta](ingredients).
+    - No problem, show me [2](number) recipes using [broccoli](ingredients).
+    - It's fine, what are [7](number) recipes with [shrimp](ingredients) and [garlic](ingredients)?
+    - No worries, what are [seven](number) recipes with [shrimp](ingredients) and [garlic](ingredients)?
+
+- intent: affirm_request_recipe_information
+  examples: |
+    - Yes, I'd like to know about the recipe with ID [12345](recipe_id).
+    - Absolutely, give me the details for recipe [67890](recipe_id).
+    - Sure, can you provide details about the recipe [Spaghetti Carbonara](recipe_name)?
+    - Yes please, I need more information on the recipe with ID [123456](recipe_id).
+    - Of course, tell me more about [Chicken Tikka Masala](recipe_name).
+    - I'm fine, what are the ingredients and instructions for [Chocolate Chip Cookies](recipe_name)?
+    - Doing well, give me the details of the recipe called [Beef Stroganoff](recipe_name).
+    - Absolutely, provide the recipe details using the id [54321](recipe_id).
+    - Sure, look up the recipe info for [Margherita Pizza](recipe_name).
+    - Yes, [54321](recipe_id), can you show me details for that recipe?
+    - Thanks, I need details about recipe number [67890](recipe_id) specifically.
+    - I'm good, look up the recipe for [Beef Stroganoff](recipe_name) please.
+    - Fine, can I get the recipe details for [Margherita Pizza](recipe_name)?
+    - Yes, tell me about the recipe with ID [12345](recipe_id).
+    - I am doing well, give me details for recipe [67890](recipe_id).
+    - Sure, can you provide the details about the recipe [Spaghetti Carbonara](recipe_name)?
+    - Yes, I need more information on the recipe with ID [123456](recipe_id).
+    - I am good, tell me more about [Chicken Tikka Masala](recipe_name).
+    - Yes please, what are the ingredients and instructions for [Chocolate Chip Cookies](recipe_name)?
+    - Doing great, give me the details of the recipe called [Beef Stroganoff](recipe_name).
+    - I need the recipe details using the id [54321](recipe_id).
+    - Yes, look up the recipe info for [Margherita Pizza](recipe_name).
+    - I am fine, [54321](recipe_id), can you show me details for that recipe?
+    - Sure, I need details about recipe number [67890](recipe_id) specifically.
+    - Yes, look up the recipe for [Beef Stroganoff](recipe_name) please.
+    - I'm fine, can I get the recipe details for [Margherita Pizza](recipe_name)?
+    - Of course, tell me about recipe with ID [12345](recipe_id).
+    - Thanks, give me details for recipe [67890](recipe_id).
+    - Yes, provide details about the recipe [Spaghetti Carbonara](recipe_name).
+    - I'm good, I need more information on the recipe with ID [123456](recipe_id).
+    - Fine, tell me more about [Chicken Tikka Masala](recipe_name).
+    - I am doing well, what are the ingredients and instructions for [Chocolate Chip Cookies](recipe_name)?
+    - Absolutely, give me the details of the recipe called [Beef Stroganoff](recipe_name).
+    - Sure, provide the recipe details using the id [54321](recipe_id).
+    - Yes, look up the recipe info for [Margherita Pizza](recipe_name).
+    - I'm good, [54321](recipe_id), can you show me details for that recipe?
+    - Yes, I need details about recipe number [67890](recipe_id) specifically.
+    - Thanks, look up the recipe for [Beef Stroganoff](recipe_name) please.
+    - Yes, can I get the recipe details for [Margherita Pizza](recipe_name)?
+    - I also need help in providing the details about the recipe [Spaghetti Carbonara](recipe_name)? 
+    - I also need your help in getting the recipe details using the id [54321](recipe_id)
+
+- intent: affirm_request_get_random_recipes
+  examples: |
+    - I'm good, I need your help in getting a random recipe that is [Korean](include_tags).
+    - Yes, I also need help finding a random [gluten free](include_tags) recipe.
+    - Love that, I need [seven](number) random [dairy](include_tags) recipes.
+    - Okay, thank you. I need [seven](number) random [dairy](include_tags) recipes.
+    - Thanks for asking. Can I get a random [Chinese](include_tags) recipe for a [main course](include_tags) that avoids [tree nuts](exclude_tags)?
+    - No problem about that, show me [four](number) random [Japanese](include_tags) recipes without [peanut](exclude_tags).
+    - It's fine, give me [three](number) random [ketogenic](include_tags) recipes not containing [soy](exclude_tags).
+    - Yes, suggest a random recipe, please.
+    - Absolutely, give me a random recipe.
+    - Sure, get me [five](number) random recipes.
+    - I am fine today, show [ten](number) random recipes.
+    - I'm doing well, give me [two](number) random recipes with the [vegetarian](include_tags) tag.
+    - I need [seven](number) random [dairy](include_tags) recipes, thanks.
+    - Yes, I want [three](number) random recipes that are [gluten free](include_tags).
+    - I'm good, show me [four](number) random [Japanese](include_tags) recipes without [peanut](exclude_tags).
+    - Doing great, show me [four](number) random [vegan](include_tags) recipes without [nuts](exclude_tags).
+    - Absolutely, get [six](number) random [dessert](include_tags) recipes excluding [seafood](exclude_tags).
+    - Yeah, find [eight](number) random recipes with [Mediterranean](include_tags) and [vegetarian](include_tags)
+    - Sure, I need [two](number) random recipes that have [paleo](include_tags) and do not have [peanuts](exclude_tags).
+    - I'd also like a random [vegan](include_tags) recipe, please.
+    - Yes, I'd like a random [keto](include_tags) recipe.
+    - Absolutely, can you find a random [gluten free](include_tags) recipe?
+    - I want a random recipe with [salad](include_tags), please.
+    - Give me a random recipe excluding [nut](exclude_tags), thanks.
+    - Sure, give me a random recipe with [sulfite](include_tags).
+    - I need a random recipe with [gluten](include_tags), please.
+    - Give me a random recipe without [gluten](exclude_tags), thank you.
+    - I'd like [two](number) random recipes with [egg](include_tags), please.
+    - Find me [four](number) random recipes that are [gluten free](include_tags), thanks.
+    - Give me [two](number) random [snack](include_tags) recipes excluding [nuts](exclude_tags), please.
+    - I'd like a random recipe that doesn't have [shellfish](exclude_tags), thanks.
+    - Can I also get a random recipe avoiding [grain](exclude_tags)?
+    - Show me a random recipe leaving out [soy](exclude_tags), please.
+    - I'd like a random recipe that omits [seafood](exclude_tags), thanks.
+    - Give me a random recipe that excludes [gluten](exclude_tags), please.
+
+- intent: affirm_request_analyze_recipe_nutrition
+  examples: |
+    - yes , what is the nutrition info for recipe [98765](recipe_id)
+    - sure, can you also provide the nutrition information for recipe ID [640767](recipe_id)?
+    - yes, please I need the nutritional content of recipe [642585](recipe_id)?
+    - i am doing fine today, please give me the nutrition details for recipe ID [12345](recipe_id).
+    - absolutely, analyze the nutrition of recipe [564738](recipe_id) for me.
+    - What are the nutrition details of the recipe called [Crepes Suzette](recipe_name), please?
+    - Can you also analyze the nutrition for [Farfalle with fresh tomatoes, basil and mozzarella](recipe_name)?
+    - I'd also like to know the nutrition information for [Cuban Black Beans & Rice](recipe_name).
+    - i am good, I need your help in getting the nutritional content of [Vegetarian Tostadas](recipe_name).
+    - love that, give me the nutrition facts for [Instant Pot Quinoa Grain Bowl](recipe_name).
+    - oh okay thank you, what's the nutritional information for [Persimmons Pumpkin Orange Smoothie With Chia Seeds](recipe_name)?
+    - thanks for asking, kindly analyze the nutrition of the recipe [Smoky Black Bean Soup With Sweet Potato & Kale](recipe_name).
+    - it's fine, provide the nutrition info for [Gluten Free Quinoa and Corn Flour Crepes](recipe_name).
+    - no problem about that, i need the nutritional analysis for [Blueberry, Chocolate & Cocao Superfood Pancakes](recipe_name).
+    - I also need your help in getting the nutrition information for [Noodles and Veggies With Peanut Sauce](recipe_name)?
+    - yes, can you give me the nutrition facts of [Vegetarian Falafels](recipe_name) next?
+
+- intent: affirm_request_dish_pair_for_wine
+  examples: |
+    - Yes, can you find a dish pairing for [riesling](wine_type) ?
+    - Sure, I'd like you to give me some dish pairings for [sauvignon_blanc](wine_type).
+    - i am doing fine today, please suggest dishes that go with [shiraz](wine_type)?
+    - Absolutely, I want to know foods that pair well with [moscato](wine_type)
+    - i am doing fine today, kindly suggest dishes that go with [shiraz](wine_type)?
+    - i am good, i need your help in finding foods that go well with [muscadet](wine_type)
+    - yes, i also need help on finding dishes that goes well with [white_burgundy](wine_type)
+    - love that, recommend dishes for [greco](wine_type).
+    - okay thank you, what should I eat with [rosé](wine_type)?
+    - oh okay then, what food pairs well with [moscato](wine_type)?
+    - i feel good, give me some dish pairings for [sauvignon_blanc](wine_type).
+    - i am fine, i need dish pairings for [zinfandel](wine_type)
+    - thanks for asking, can you suggest dishes that go with [shiraz](wine_type)?
+    - yeah, what are some good dishes to serve with [cabernet_sauvignon](wine_type)?
+    - no problem about that, which food can i serve along with [arneis](wine_type)
+    - it's fine, give me some dish pairings for [sauvignon_blanc](wine_type).
+
+- intent: affirm_request_meal_plans
+  examples: |
+    - love that, i need you to create a [whole30](diet) meal plan for me next
+    - okay thank you, please create a [whole30](diet)
+    - yes, create a meal plan without [egg](exclude), [tree nut](exclude) and [grain](exclude)
+    - oh okay then, create a meal plan excluding [shellfish](exclude).
+    - absolutely, i need you to give me a meal plan without any [gluten](exclude).
+    - sure, can you generate a [vegetarian](diet) meal plan for the [week](time_frame) with [2000](target_calories) calories?
+    - i feel good, I need a [gluten-free](diet) meal plan for the [day](time_frame) excluding [dairy](exclude).
+    - i am fine, I need a [whole30](diet) meal plan for the [day](time_frame) excluding [seafood](exclude).
+    - thanks for asking, please create a [vegan](diet) meal plan for the [week](time_frame) with [1800](target_calories) calories and no [peanuts](exclude).
+    - yes, generate a meal plan for a [week](time_frame) with a [ketogenic](diet) diet and [2500](target_calories) calories.
+    - I'm also looking for a meal plan without [sulfite](exclude)
+    - yes, generate a meal plan for a [week](time_frame) with a [keto](diet) diet and [2500](target_calories) calories.
+    - yes, can you help me plan my meals for the [week](time_frame)
+    - yes, please generate a meal plan for me next
+    - yeah, could you also generate a meal plan?
+    - no problem about that, please generate a meal that does not include [grain](exclude)
+    - it's fine, please help me generate a [week](time_frame) meal plan
+    - yes, i also need help in planning my meal for [today](time_frame)
+  
+- intent: ask_valid_diet
+  examples: |
+    - Thank you, what are the valid diets available?
+    - thank you, what are the valid diets available?
+    - list the diets you have
+    - can i get the valid diet list?
+    - oh okay, what valid diet are there
+
+- intent: out_of_scope
+  examples: |
+    - I want pizza
+    - please help with my ice cream it's dripping
+    - no wait go back i want a dripping ice cream but a cone that catches it so you can drink the ice cream later
+    - i want a non dripping ice cream
+    - hey little mama let em whisper in your ear
+    - someone call the police i think the bot died
+    - show me a picture of a chicken
+    - neither
+    - I want french cuisine
+    - i am hungry
+    - restaurants
+    - restaurant
+    - you're a loser lmao
+    - can i be shown a gluten free restaurant
+    - i don't care!!!!
+    - i do not care how are you
+    - again?
+    - oh wait i gave you my work email address can i change it?
+    - hang on let me find it
+    - stop it, i do not care!!!
+    - really? you're so touchy?
+    - how come?
+    - I changed my mind
+    - what?
+    - did i break you
+    - I don't wanna tell the name of my company
+    - that link doesn't work!
+    - you already have that
+    - this is a really frustrating experience
+    - no stop
+    - i want a french restaurant
+    - shit bot
+    - do you want to marry me?
+    - give me food
+    - i want food
+    - udo, I want to marry you
+    - i wanna party
+    - shitmuncher
+    - I like you
+    - i want pizza
+    - i want pizza!!
+    - silly bot
+    - i want to eat
+    - you are a stupid bot
+    - i hate you
+    - Can I ask you questions first?
+    - is it a wasteland full of broken robot parts?
+    - i can't deal with your request
+    - are you vegan
+    - who will anser my email?
+    - do you sell vacuum robots?
+    - i want to buy a roomba for my grandson
+    - and make chicken noises into the phone
+    - is barbara still married to you
+    - what's your wife doing this weekend
+    - how are the kids
+    - you're rather dull
+    - personal or work?
+    - are you using Rasa Core and NLU ?
+    - tell me a joke
+    - what else?
+    - I already told you! I'm a shitmuncher
+    - I'm a shitmuncher
+    - who are the engineers at rasa?
+    - who are they?
+    - can we keep chatting?
+    - talk to me
+    - who is your favourite robot?
+    - a tamed mouse will arrive at your doorstep in the next couple of days
+    - you will know it from the single red rose it carries between its teeth
+    - i will tame a mouse for you
+    - isn't the newsletter just spam?
+    - go back
+    - can you help me with the docs?
+    - sorry, i cannot rephrase
+    - and your REST API doesn't work
+    - i told you already
+    - better than you
+    - oh my god, not again!
+    - you are a badass bot!
+    - lol
+    - why do you need that?
+    - is that any of your business
+    - can you help me with your docs?
+    - i immediately need help with implementing the coolest bot you can imagine
+    - can you help me with your docs
+    - can you tell me how to build a bot?
+    - can you learn from our conversation?
+    - common, just try
+    - hey, I contacted you a couple of days ago but didn't get any response, any news?
+    - please hurry, i have deadline in two weeks to deliver the bot it is for very big company
+    - you are annoying
+    - Do I have to accept?
+    - Is Rasa really smart?
+    - kannst du auch deutsch?
+    - are the newsletter worth the subscription?
+    - it's a pity
+    - i want more of you in my life!
+    - the one that is better than you
+    - you suck
+    - bots are bad
+    - i dont like bots
+    - do you have a phone number?
+    - where do you live?
+    - how are akela's cats doing?
+    - but I just told you that :(
+    - Why don't you answer?
+    - But you're an english site :(
+    - can you help me to build a bot
+    - fool
+    - is that what i asked
+    - are you dumb
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- synonym: ketogenic
+  examples: |
+    - keto
+
+- synonym: gluten-free
+  examples: |
+    - gluten free
+
+- synonym: peanut
+  examples: |
+    - nuts
+    - peanuts
+    - nut
+
+- synonym: tree nut
+  examples: |
+    - tree-nut
+    - tree nuts
+    - tree-nuts
+
+- synonym: egg
+  examples: |
+    - eggs
+
+- lookup: wine_type
+  examples: |
+    - assyrtiko
+    - pinot_blanc
+    - cortese
+    - roussanne
+    - moschofilero
+    - muscadet
+    - viognier
+    - verdicchio
+    - greco
+    - marsanne
+    - white_burgundy
+    - chardonnay
+    - gruener_veltliner
+    - white_rioja
+    - frascati
+    - gavi
+    - l_acadie_blanc
+    - trebbiano
+    - sauvignon_blanc
+    - catarratto
+    - albarino
+    - arneis
+    - verdejo
+    - vermentino
+    - soave
+    - pinot_grigio
+    - dry_riesling
+    - torrontes
+    - mueller_thurgau
+    - grechetto
+    - gewurztraminer
+    - chenin_blanc
+    - white_bordeaux
+    - semillon
+    - riesling
+    - sauternes
+    - sylvaner
+    - lillet_blanc
+    - petite_sirah
+    - zweigelt
+    - baco_noir
+    - bonarda
+    - cabernet_franc
+    - bairrada
+    - barbera_wine
+    - primitivo
+    - pinot_noir
+    - nebbiolo
+    - dolcetto
+    - tannat
+    - negroamaro
+    - red_burgundy
+    - corvina
+    - rioja
+    - cotes_du_rhone
+    - grenache
+    - malbec
+    - zinfandel
+    - sangiovese
+    - carignan
+    - carmenere
+    - cesanese
+    - cabernet_sauvignon
+    - aglianico
+    - tempranillo
+    - shiraz
+    - mourvedre
+    - merlot
+    - nero_d_avola
+    - bordeaux
+    - marsala
+    - port
+    - gamay
+    - dornfelder
+    - concord_wine
+    - sparkling_red_wine
+    - pinotage
+    - agiorgitiko
+    - pedro_ximenez
+    - moscato
+    - late_harvest
+    - ice_wine
+    - white_port
+    - lambrusco_dolce
+    - madeira
+    - banyuls
+    - vin_santo
+    - port
+    - sparkling_rose
+    - cava
+    - cremant
+    - champagne
+    - prosecco
+    - spumante
+    - cream_sherry
+    - dry_sherry
+    - dry_vermouth
+    - fruit_wine
+    - mead
+
+- lookup: diet
+  examples: |
+    - Gluten Free
+    - Ketogenic
+    - Vegetarian
+    - Lacto-Vegetarian
+    - Ovo-Vegetarian
+    - Vegan
+    - Pescetarian
+    - Paleo
+    - Primal
+    - Low FODMAP
+    - Whole30
+
+- lookup: cuisine
+  examples: |
+    - African
+    - Asian
+    - American
+    - British
+    - Cajun
+    - Caribbean
+    - Chinese
+    - Eastern European
+    - European
+    - French
+    - German
+    - Greek
+    - Indian
+    - Irish
+    - Italian
+    - Japanese
+    - Jewish
+    - Korean
+    - Latin American
+    - Mediterranean
+    - Mexican
+    - Middle Eastern
+    - Nordic
+    - Southern
+    - Spanish
+    - Thai
+    - Vietnamese
+
+- lookup: exclude
+  examples: |
+    - Dairy
+    - Egg
+    - Gluten
+    - Grain
+    - Peanut
+    - Seafood
+    - Sesame
+    - Shellfish
+    - Soy
+    - Sulfite
+    - Tree Nut
+    - Wheat
+
+- lookup: meal_type
+  examples: |
+    - main course
+    - side dish
+    - dessert
+    - appetizer
+    - salad
+    - bread
+    - breakfast
+    - soup
+    - beverage
+    - sauce
+    - marinade
+    - fingerfood
+    - snack
+    - drink
